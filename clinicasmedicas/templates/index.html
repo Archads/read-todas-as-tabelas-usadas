@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clínicas Médicas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<!--            Clínicas              -->
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Clínicas</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/form", class="btn btn-success">Adicionar</a>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CodCli</th>
+      <th scope="col">NomeCli</th>
+      <th scope="col">Endereco</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for clinicas in clinica %}
+    <tr>
+      <th>{{dbs.id}}</th>
+      <td>{{dbs.CodCli}}</td>
+      <td>{{dbs.NomeCli}}</td>
+      <td>{{dbs.Endereco}}</td>
+      <td>{{dbs.Telefone}}</td>
+      <td>{{dbs.Email}}</td>
+      <td>
+        <a href="" class="btn btn-primary">Editar</a>
+        <a href="" class="btn btn-danger">Deletar</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+    </table>
+    </div>
+<!--                Medicos                 -->
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Médicos</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/form", class="btn btn-success">Adicionar</a>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CodMed</th>
+      <th scope="col">NomeMed</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Email</th>
+      <th scope="col">CodEspec</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for medicos in medico %}
+    <tr>
+      <th>{{dbs.id}}</th>
+      <td>{{dbs.CodMed}}</td>
+      <td>{{dbs.NomeMed}}</td>
+      <td>{{dbs.Genero}}</td>
+      <td>{{dbs.Telefone}}</td>
+      <td>{{dbs.Email}}</td>
+      <td>{{dbs.CodEspec}}</td>
+      <td>
+        <a href="" class="btn btn-primary">Editar</a>
+        <a href="" class="btn btn-danger">Deletar</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+    </table>
+    </div>
+<!--             especialidade            -->    
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Especialidade</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/form", class="btn btn-success">Adicionar</a>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CodEspec</th>
+      <th scope="col">NomeEspec</th>
+      <th scope="col">Descricao</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for especialidades in especialidade %}
+    <tr>
+      <th>{{dbs.id}}</th>
+      <td>{{dbs.CodEspec}}</td>
+      <td>{{dbs.NomeEspec}}</td>
+      <td>{{dbs.Descricao}}</td>
+      <td>
+        <a href="" class="btn btn-primary">Editar</a>
+        <a href="" class="btn btn-danger">Deletar</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+    </table>
+    </div>
+<!--              ClinicaMedico              -->
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Clínica / Médicos</h1>
+    </div>
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/form", class="btn btn-success">Adicionar</a>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CodCli</th>
+      <th scope="col">CodMed</th>
+      <th scope="col">DataIngresso</th>
+      <th scope="col">CargaHorariaSemanal</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for clinica_medicos in clinica_medico %}
+    <tr>
+      <th>{{dbs.id}}</th>
+      <td>{{dbs.CodCli}}</td>
+      <td>{{dbs.CodMed}}</td>
+      <td>{{dbs.DataIngresso}}</td>
+      <td>{{dbs.CargaHorariaSemanal}}</td>
+      <td>
+        <a href="" class="btn btn-primary">Editar</a>
+        <a href="" class="btn btn-danger">Deletar</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+    </table>
+    </div>
+    
+
+
+</body>
+
+</html>
